@@ -1,1 +1,31 @@
-
+<html>
+    <body style="background-color: rgb(154, 206, 238);">
+    <style>
+        .button{
+            background-color: rgb(22, 61, 85);
+            border-radius: 25px;
+            border: none;
+            color: white;
+            padding: 4px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .searchbar{
+            border-radius: 15px;
+        
+        }
+    </style>
+        <div style='text-align: center' class='content'>
+            <div class='form'>
+                <form  action='/links' method='POST'>
+                        <input type='text' class='searchbar' name='searchWordname' id='searchWordname'>
+                        <input type='submit' class='button' value='Get link'>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-color: rgb(154, 206, 238);">
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                max-width: 100%;
+            }
+            
+            tr:nth-child(even) {
+              background-color: rgba(150, 212, 212, 0.4);
+            }
+            
+            th:nth-child(even),td:nth-child(even) {
+              background-color: rgba(150, 212, 212, 0.4);
+            }
+            .button{
+              background-color: rgb(22, 61, 85);
+              border-radius: 25px;
+              border: none;
+              color: white;
+              padding: 4px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 12px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
+            
+        </style>
+        <h1 style='text-align: center;color:rgb(22, 61, 85);'>Related Links</h1>
+            <div class='form' style='text-align: center;color:rgb(22, 61, 85);'>
+              <form  action='/' method='POST,GET'>
+                  <input type='submit' class='button' value='Go Back Home'>
+              </form>
+            </div>
+            
+        <table  style="border:2px;border-style: double;width:100%;">
+            
+            <tr id="mydiv" style="background-color:rgb(3, 77, 65);">
+               <th style="border:2px;border-style: double;">Website searched</th>
+               <th style="border:2px;border-style: double;">Result Links</th>
+               <th style="border:2px;border-style: double;">Visit Website</th>
+            </tr>
+            {% for glinks in glinks %}
+            <tr style="width:100%;">
+                <td style="border:2px;border-style: double;text-align: center;">{{glinks['search_word']}}</td>
+                <td style="border:2px;border-style: double;text-align: center;" ><a href={{glinks['goto_link']}}>Goto Website</a></td>
+                <td style="border:2px;border-style: double;">{{glinks['website_link']}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </body>
+</html>
